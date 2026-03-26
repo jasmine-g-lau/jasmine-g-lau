@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:       #f5f5f0;
+  --fg:       #0a0a0a;
+  --dim:      #999;
+  --mid:      #555;
+  --accent:   #0a0a0a;
+  --border:   #ccc;
+  --hover-bg: #efefea;
+  --card-bg:  #fafaf7;
+  --mono:     'Share Tech Mono', monospace;
+  --display:  'VT323', monospace;
+  --nav-h:    52px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  cursor: crosshair;
+}
+
+/* subtle paper texture via repeating dots */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle, #0000000a 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+::selection {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+a {
+  color: var(--fg);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* shared section labels */
+.section-label {
+  font-size: 10px;
+  letter-spacing: 6px;
+  color: var(--dim);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-family: var(--display);
+  font-size: clamp(28px, 5vw, 52px);
+  letter-spacing: 4px;
+  color: var(--fg);
+  margin-bottom: 32px;
+}
+
+/* shared page wrapper */
+.page {
+  min-height: 100vh;
+  padding: 120px 40px 80px;
+  max-width: 860px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.page-label {
+  font-size: 9px;
+  letter-spacing: 6px;
+  color: var(--dim);
+  margin-bottom: 12px;
+}
+
+.page-title {
+  font-family: var(--display);
+  font-size: clamp(36px, 6vw, 72px);
+  letter-spacing: 4px;
+  color: var(--fg);
+  margin-bottom: 48px;
+  line-height: 1;
+}
+
+/* shared button */
+.btn-outline {
+  display: inline-block;
+  border: 1px solid var(--fg);
+  color: var(--fg);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 4px;
+  padding: 10px 24px;
+  text-decoration: none;
+  transition: all 0.15s;
+  cursor: pointer;
+  background: none;
+}
+
+.btn-outline:hover {
+  background: var(--fg);
+  color: var(--bg);
+  text-decoration: none;
+}
+
+/* skill / tag pill */
+.skill-tag {
+  border: 1px solid var(--border);
+  padding: 4px 12px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--mid);
+}
+
+.skill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* scroll progress bar */
+.scroll-bar {
+  position: fixed;
+  top: var(--nav-h);
+  left: 0;
+  height: 1px;
+  background: var(--fg);
+  z-index: 101;
+  transition: width 0.1s linear;
+}
+
+/* footer */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 24px 40px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--dim);
+  letter-spacing: 3px;
+  position: relative;
+  z-index: 1;
+}

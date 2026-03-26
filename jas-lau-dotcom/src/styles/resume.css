@@ -1,0 +1,50 @@
+.resume-section {
+  margin-bottom: 48px;
+}
+
+.resume-section-title {
+  font-size: 10px;
+  letter-spacing: 5px;
+  color: var(--dim);
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.resume-entry {
+  margin-bottom: 24px;
+}
+
+.resume-entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.resume-entry-title {
+  font-size: 13px;
+  color: var(--fg);
+  letter-spacing: 1px;
+}
+
+.resume-entry-date {
+  font-size: 10px;
+  color: var(--dim);
+  letter-spacing: 2px;
+}
+
+.resume-entry-org {
+  font-size: 11px;
+  color: var(--mid);
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+}
+
+.resume-entry-desc {
+  font-size: 11px;
+  color: var(--dim);
+  line-height: 1.7;
+}
