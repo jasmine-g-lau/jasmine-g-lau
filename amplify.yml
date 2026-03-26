@@ -4,12 +4,12 @@ frontend:
     preBuild:
       commands:
         - cd jas-lau-dotcom
-        - npm install
+        - npm install --legacy-peer-deps
     build:
       commands:
         - npm run build
   artifacts:
-    baseDirectory: jas--lau-dotcom/build
+    baseDirectory: jas-lau-dotcom/build
     files:
       - '**/*'
   cache:
