@@ -37,26 +37,8 @@ export const NAV_ITEMS = [
 
 export type PageKey = typeof NAV_ITEMS[number]["key"];
 
-export const PAGE_TO_PATH: Record<PageKey, string> = {
-  HOME:   "/",
-  RESUME: "/resume",
-  GITHUB: "/github",
-  DESIGN: "/design",
-  ABOUT:  "/about",
-};
-
-export const PATH_TO_PAGE: Record<string, PageKey> = {
-  "/":       "HOME",
-  "/resume": "RESUME",
-  "/github": "GITHUB",
-  "/design": "DESIGN",
-  "/about":  "ABOUT",
-};
-
 export const CATEGORIES = ["ALL", "CSE", "DESIGN", "RESEARCH", "EVENTS"] as const;
 export type Category = typeof CATEGORIES[number];
-
-// ── Projects (carousel) ───────────────────────────────────────────────────────
 
 export const PROJECTS: Project[] = [
   {
@@ -188,9 +170,9 @@ export const PROJECTS: Project[] = [
     tags: ["LangChain", "Python", "AI"],
   },
 ];
-
+ 
 // ── Work Experience ───────────────────────────────────────────────────────────
-
+ 
 export const EXPERIENCE: Experience[] = [
   {
     title: "Web Developer Student Assistant",
@@ -275,31 +257,31 @@ export const EXPERIENCE: Experience[] = [
     skills: ["Drupal", "Adobe CC", "Graphic Design", "HTML"],
   },
 ];
-
+ 
 // ── Education ─────────────────────────────────────────────────────────────────
-
+ 
 export const EDUCATION = {
   degree: "B.S. Computer Science & Engineering",
   school: "University of California, Merced",
   date: "2022 – 2026",
   details: "Relevant coursework: Data Structures, Algorithms, Computer Organization, Machine Learning, Human-Computer Interaction.",
 };
-
+ 
 // ── Skills ────────────────────────────────────────────────────────────────────
-
+ 
 export const SKILLS = {
   cse:    ["React", "TypeScript", "JavaScript", "Python", "Tailwind CSS", "Ruby on Rails", "PostgreSQL", "LangChain", "C++", "Java", "MIPS Assembly", "Node.js"],
   design: ["Figma", "Adobe Illustrator", "Adobe Photoshop", "Adobe CC", "UI/UX", "Graphic Design", "Branding"],
   other:  ["Git", "Drupal", "Unreal Engine 5", "YOLOv8", "matplotlib", "Pandas", "Kotlin"],
 };
-
+ 
 export const INTERESTS = [
   "Risograph", "Zine-making", "Typography", "Hackathons",
   "Matcha", "Film photography", "Designathons", "Rock climbing",
 ];
-
+ 
 // ── GitHub repos ──────────────────────────────────────────────────────────────
-
+ 
 export const GITHUB_REPOS: GithubRepo[] = [
   { name: "MLwithPython",  desc: "Honors project — classification algorithms applied to Australian rainfall datasets.", lang: "Python",     stars: 0, url: "https://github.com/jasmine-g-lau/MLwithPython" },
   { name: "CSE-031",       desc: "MIPS assembly: selection sort and recursive summation translated from C.",           lang: "MIPS",       stars: 0, url: "https://github.com/jasmine-g-lau/CSE-031" },
