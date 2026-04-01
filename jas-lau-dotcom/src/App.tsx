@@ -7,7 +7,7 @@ import Resume from "./pages/Resume";
 import GitHub from "./pages/GitHub";
 import Design from "./pages/Design";
 import About from "./pages/About";
-import { PageKey } from "./data/projects";
+import { import { PageKey } from "./data/projects";
 
 export default function App() {
   const [activePage, setActivePage] = useState<PageKey>("HOME");
@@ -32,7 +32,7 @@ export default function App() {
       <NavBar activePage={activePage} onNavigate={navigate} />
 
       {activePage === "HOME"   && <Home scrollProgress={scrollProgress} />}
-      {activePage === "RESUME" && <Resume />}
+sume />}
       {activePage === "GITHUB" && <GitHub />}
       {activePage === "DESIGN" && <Design />}
       {activePage === "ABOUT"  && <About />}
