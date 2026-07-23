@@ -59,7 +59,7 @@ export const PROJECTS: Project[] = [
     title: "Dusk to Don",
     org: "Alpha Kappa Psi",
 
-    date: "2026",
+    date: "Feb - April 2026",
     location: "Merced, CA",
     images: ["",],
     desc: "Business Lead for a hybrid hospitality concept targeting college towns. Built a $280k–$350k startup budget, break-even model (~143 daily customers), and designed 24 sound-dampened private cubicles with 1 Gbps fiber. Developed brand identity and go-to-market strategy.",
@@ -160,7 +160,7 @@ export const PROJECTS: Project[] = [
     title: "Event Promotion",
     org: "Alpha Kappa Psi",
 
-    date: "2026",
+    date: "Feb - April 2026",
     location: "Merced, CA",
     images: ["",],
     desc: "Graphics to promote fundraisers, external events, financial literacy workshops, and professional development workshops",
@@ -273,7 +273,7 @@ export const PROJECTS: Project[] = [
     title: "Kairos Design",
     org: "Kairos Dance Group",
 
-    date: "2023 – 2025",
+    date: "Sep 2023 – March 2025",
     location: "Merced, CA",
     images: [""],
     desc: "Graphic Design for Kairos UC Merced's Design Tech Crew. Produced event graphics, fundraiser materials, and promotional assets across 12+ pieces over two years.",
