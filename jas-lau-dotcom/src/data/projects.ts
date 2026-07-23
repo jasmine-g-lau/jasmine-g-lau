@@ -165,7 +165,8 @@ export const PROJECTS: Project[] = [
     images: ["",],
     desc: "Graphics to promote fundraisers, external events, financial literacy workshops, and professional development workshops",
     bullets: [
-      "",
+      "Produced social media promotional material supporting marketing, outreach, and campus events.",
+      "Collaborated with various committee teams to create visuals that are informative and eye-catching.",
     ],
     skills: ["Graphic Design", "Branding", "Marketting"],
     role: "Student Organization",
@@ -531,7 +532,7 @@ export const EXPERIENCE: Experience[] = [
 
     date: "Jan 2024 – Dec 2024",
     location: "UC Merced · On-site",
-    images: ["images/idhub-christmas1.png", "images/idhub-christmas1.png"],
+    images: ["images/idhub-christmas1.png", "images/idhub-christmas2.png"],
     desc: "",
     bullets: [
       "Maintained the UC Merced Innovation website using Drupal and HTML",
