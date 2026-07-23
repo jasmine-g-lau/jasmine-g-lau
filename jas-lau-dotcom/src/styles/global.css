@@ -105,8 +105,9 @@ a:hover {
 /* shared page wrapper */
 .page {
   min-height: 100vh;
-  padding: 120px 40px 80px;
-  max-width: 860px;
+  /* reduce horizontal margins and allow wider content on large screens */
+  padding: 120px 24px 80px;
+  max-width: 1100px;
   margin: 0 auto;
   position: relative;
   z-index: 1;

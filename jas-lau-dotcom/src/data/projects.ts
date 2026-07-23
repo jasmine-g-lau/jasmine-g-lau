@@ -531,7 +531,7 @@ export const EXPERIENCE: Experience[] = [
 
     date: "Jan 2024 – Dec 2024",
     location: "UC Merced · On-site",
-    images: [""],
+    images: ["images/idhub-christmas1.png", "images/idhub-christmas1.png"],
     desc: "",
     bullets: [
       "Maintained the UC Merced Innovation website using Drupal and HTML",
