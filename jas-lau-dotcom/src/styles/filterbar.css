@@ -78,7 +78,8 @@
 .filterbar-panel {
   position: absolute;
   top: calc(100% + 10px);
-  right: 0;
+  left: 0;
+  right: auto;
   width: 280px;
   max-height: min(70vh, 560px);
   overflow-y: auto;
@@ -91,6 +92,12 @@
   font-family: var(--font-display);
   color: var(--ink);
   animation: filterbar-pop 0.14s ease-out;
+}
+
+/* when the root has .align-right, anchor the panel to the right edge */
+.filterbar.align-right .filterbar-panel {
+  right: 0;
+  left: auto;
 }
 
 @keyframes filterbar-pop {

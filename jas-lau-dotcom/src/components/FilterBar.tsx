@@ -25,7 +25,7 @@ interface FilterBarProps {
   value: FilterState;
   onChange: (next: FilterState) => void;
   roleOptions: string[];
-  workTypeOptions: string[];
+  skillOptions: string[];
   minYear: number;
   maxYear: number;
   /** Hide the Category (All/Engineering/Design) section — use on a page
@@ -118,13 +118,14 @@ export default function FilterBar({
   value,
   onChange,
   roleOptions,
-  workTypeOptions,
+  skillOptions,
   minYear,
   maxYear,
   showCategory = true,
 }: FilterBarProps) {
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
+  const [alignRight, setAlignRight] = useState(false);
 
   useEffect(() => {
     const onPointerDown = (e: MouseEvent) => {
@@ -143,6 +144,28 @@ export default function FilterBar({
     };
   }, []);
 
+  useEffect(() => {
+    if (!open) return undefined;
+
+    const computeAlign = () => {
+      const el = rootRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      // panel width mirrors CSS: 280px or up to 88vw on small screens
+      const panelWidth = Math.min(280, Math.floor(window.innerWidth * 0.88));
+      // if opening the panel to the right would overflow viewport, align to the right
+      if (rect.left + panelWidth > window.innerWidth - 8) {
+        setAlignRight(true);
+      } else {
+        setAlignRight(false);
+      }
+    };
+
+    computeAlign();
+    window.addEventListener("resize", computeAlign);
+    return () => window.removeEventListener("resize", computeAlign);
+  }, [open]);
+
   const activeCount =
     (value.category !== "ALL" ? 1 : 0) +
     value.roles.length +
@@ -150,7 +173,7 @@ export default function FilterBar({
     (value.date ? 1 : 0);
 
   return (
-    <div className="filterbar" ref={rootRef}>
+    <div className={`filterbar ${alignRight ? "align-right" : ""}`} ref={rootRef}>
       <button
         type="button"
         className={`filterbar-trigger${activeCount > 0 ? " has-active" : ""}`}
@@ -200,22 +223,22 @@ export default function FilterBar({
           </div>
 
           <div className="filterbar-section">
-            <div className="filterbar-section-title">Focus</div>
+            <div className="filterbar-section-title">Skills</div>
             <div className="filterbar-checkbox-list">
-              {workTypeOptions.map((workType) => (
-                <label key={workType} className="filterbar-checkbox">
+              {skillOptions.map((skill) => (
+                <label key={skill} className="filterbar-checkbox">
                   <input
                     type="checkbox"
-                    checked={value.workTypes.includes(workType)}
-                    onChange={() =>
-                      onChange({ ...value, workTypes: toggleValue(value.workTypes, workType) })
-                    }
+                    checked={value.workTypes.includes(skill)}
+                    onChange={() => onChange({ ...value, workTypes: toggleValue(value.workTypes, skill) })}
                   />
-                  {workType}
+                  {skill}
                 </label>
               ))}
             </div>
           </div>
+
+
 
           <div className="filterbar-section">
             <div className="filterbar-section-title">Date</div>

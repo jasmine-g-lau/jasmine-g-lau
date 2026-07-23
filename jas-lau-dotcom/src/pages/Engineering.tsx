@@ -77,8 +77,8 @@ export default function Engineering() {
     [galleryItems]
   );
  
-  const workTypeOptions = useMemo(
-    () => Array.from(new Set(galleryItems.map((item) => item.workType))).sort(),
+  const skillOptions = useMemo(
+    () => Array.from(new Set(galleryItems.flatMap((item) => item.tags))).sort(),
     [galleryItems]
   );
  
@@ -96,7 +96,11 @@ export default function Engineering() {
   const filteredItems = useMemo(() => {
     return galleryItems.filter((item) => {
       if (filters.roles.length > 0 && !filters.roles.includes(item.role)) return false;
-      if (filters.workTypes.length > 0 && !filters.workTypes.includes(item.workType)) return false;
+      if (filters.workTypes.length > 0) {
+        // filters.workTypes represents selected skills; item.tags is array of skills
+        const hasAny = item.tags.some((t) => filters.workTypes.includes(t));
+        if (!hasAny) return false;
+      }
       if (filters.date) {
         const span = parseDateSpan(item.date);
         if (!spanIncludes(span, filters.date.year, filters.date.month)) return false;
@@ -114,7 +118,7 @@ export default function Engineering() {
           value={filters}
           onChange={setFilters}
           roleOptions={roleOptions}
-          workTypeOptions={workTypeOptions}
+          skillOptions={skillOptions}
           minYear={minYear}
           maxYear={maxYear}
           showCategory={false}
