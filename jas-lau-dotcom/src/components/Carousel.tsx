@@ -63,12 +63,16 @@ export default function Carousel({ projects, onSelect, scrollSpin = false }: Car
             const angle = i * angleStep;
             const isActive = i === index;
             const category = proj.category ?? "";
-            const ascii = proj.ascii ?? "";
             const year = proj.year ?? proj.date ?? "";
 
+            const normalizeSrc = (s?: string) => (s ? (s.startsWith("/") ? s : `/${s}`) : null);
             const candidateImage =
-              proj.image ?? proj.images?.[0] ?? proj.source?.images?.[0] ?? null;
-            const imgSrc = candidateImage ? (candidateImage.startsWith("/") ? candidateImage : `/${candidateImage}`) : null;
+              proj.image ??
+              proj.images?.[0] ??
+              proj.source?.images?.[0] ??
+              proj.source?.deliverables?.find((d: any) => Array.isArray(d.images) && d.images.length > 0)?.images?.[0] ??
+              null;
+            const imgSrc = normalizeSrc(candidateImage);
 
             return (
               <div
@@ -89,7 +93,7 @@ export default function Carousel({ projects, onSelect, scrollSpin = false }: Car
                     <img src={imgSrc} className="card-image" alt={proj.title} />
                   </div>
                 ) : (
-                  <div className="card-ascii-art">{ascii}</div>
+                  <div className="card-image-empty" />
                 )}
                 <div className="card-title">{proj.title}</div>
                 <div className="card-year">{year}</div>

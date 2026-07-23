@@ -36,6 +36,8 @@ export interface Experience {
   bullets: string[];
   skills: string[];
   role: "Research" | "Internship" | "Full Time";
+
+  link?: string;
 }
 
 export const NAV_ITEMS = [
@@ -59,7 +61,7 @@ export const PROJECTS: Project[] = [
 
     date: "2026",
     location: "Merced, CA",
-    // images: ["data/images/d2d-coming-soon.jpg",],
+    images: ["",],
     desc: "Business Lead for a hybrid hospitality concept targeting college towns. Built a $280k–$350k startup budget, break-even model (~143 daily customers), and designed 24 sound-dampened private cubicles with 1 Gbps fiber. Developed brand identity and go-to-market strategy.",
     bullets: [
       "Built a $280k–$350k startup budget and break-even model for a hybrid hospitality concept.",
@@ -75,70 +77,77 @@ export const PROJECTS: Project[] = [
       {
         title: "First 100 Dine-In Orders Promotion",
         desc: "Promotional social media graphic created for the annual fundraiser.",
-        images: ["images/kairos-valentines-1.jpg", "images/kairos-valentines-2.jpg"],
+        images: ["images/d2d-100.jpg"],
         link: "https://www.instagram.com/dusktodon_209/p/DV1_J-JD0Kx/",
         linkText: "View Promotion Instagram Post"
       },
       {
         title: "Matcha Latte Spotlight",
         desc: "Main poster design for the end-of-year dance showcase.",
-        images: ["images/kairos-lny.jpg"],
+        images: ["images/d2d-matcha.jpg"],
         link: "https://www.instagram.com/dusktodon_209/p/DVzOU1zEoXq/",
         linkText: "View Spotlight Instagram Post"
       },
       {
         title: "Tonkatsu Ramen Spotlight",
         desc: "Main poster design for the end-of-year dance showcase.",
-        images: ["images/kairos-sponsored-1.jpg", "images/kairos-sponsored-2.jpg"],
+        images: ["images/d2d-tonkatsu.jpg"],
         link: "https://www.instagram.com/dusktodon_209/p/DVzOHlVksXa/",
         linkText: "View Spotlight Instagram Post"
       },
       {
         title: "Spicy Miso Ramen Spotlight",
         desc: "Main poster design for the end-of-year dance showcase.",
-        images: ["images/kairos-movie.jpg"],
+        images: ["images/d2d-spicy-miso.jpg"],
         link: "https://www.instagram.com/dusktodon_209/p/DVzN74MEoHL/",
+        linkText: "View Spotlight Instagram Post"
+      },
+      {
+        title: "Tonkatsu Udon Spotlight",
+        desc: "Main poster design for the end-of-year dance showcase.",
+        images: ["images/d2d-t-udon.jpg"],
+        link: "https://www.instagram.com/dusktodon_209/p/DVzNyF_kjza/",
         linkText: "View Spotlight Instagram Post"
       },
       {
         title: "Curry Udon Spotlight",
         desc: "Main poster design for the end-of-year dance showcase.",
-        images: ["images/kairos-hotdog.jpg"],
+        images: ["images/d2d-curry.jpg"],
         link: "https://www.instagram.com/dusktodon_209/p/DVzNyF_kjza/",
         linkText: "View Spotlight Instagram Post"
       },
       {
         title: "Giveaway Raffle Promotion",
         desc: "Main poster design for the end-of-year dance showcase.",
-        images: ["images/kairos-dues-1.jpg", "images/kairos-dues-2.jpg"],
+        images: ["images/d2d-giveaway-1.jpg", "images/d2d-giveaway-2.jpg"],
         link: "https://www.instagram.com/dusktodon_209/p/DVxQDr_EYQU/",
         linkText: "View Promotion Instagram Post"
       },
       {
         title: "Book to Bowl Tagline Promotion",
         desc: "Main poster design for the end-of-year dance showcase.",
-        images: ["images/kairos-bf.jpg"],
+        images: ["images/d2d-tagline.jpg"],
         link: "https://www.instagram.com/dusktodon_209/p/DVui6H_Ebgm/",
         linkText: "View Promotion Instagram Post"
       },
       {
         title: "Menu",
         desc: "Main poster design for the end-of-year dance showcase.",
-        images: ["images/kairos-bf.jpg"],
+        images: ["images/d2d-menu.jpg"],
         link: "https://www.instagram.com/dusktodon_209/p/DVufydfkZqG/",
         linkText: "View Menu Instagram Post"
       },
       {
         title: "Dusk to Don Coming Soon Promotion 2",
         desc: "Main poster design for the end-of-year dance showcase.",
-        images: ["images/kairos-bf.jpg"],
+        images: ["images/d2d-coming-soon-2.png"],
         link: "https://www.instagram.com/dusktodon_209/p/DVueSzUmopc/",
         linkText: "View Promotion Instagram Post"
       },
       {
         title: "Coming Soon Promotion",
         desc: "Main poster design for the end-of-year dance showcase.",
-        images: ["images/kairos-bf.jpg"],
+        images: ["images/d2d-coming-soon.jpg"],
         link: "https://www.instagram.com/dusktodon_209/p/DVuD7efknyU/",
         linkText: "View Promotion Instagram Post"
       },
@@ -148,12 +157,12 @@ export const PROJECTS: Project[] = [
   {
     id: "akspi",
     category: "DESIGN",
-    title: "Fundraising and Event Graphics",
+    title: "Event Promotion",
     org: "Alpha Kappa Psi",
 
     date: "2026",
     location: "Merced, CA",
-    // images: ["data/images/akpsi-external.png",],
+    images: ["",],
     desc: "Graphics to promote fundraisers, external events, financial literacy workshops, and professional development workshops",
     bullets: [
       "",
@@ -168,8 +177,29 @@ export const PROJECTS: Project[] = [
         title: "External Event",
         desc: "Promotional social media graphic created for the annual fundraiser.",
         images: ["images/akpsi-external.png"],
-        link: "https://www.instagram.com/dusktodon_209/p/DV1_J-JD0Kx/",
-        linkText: "View Promotion Instagram Post"
+        // link: "https://www.instagram.com/dusktodon_209/p/DV1_J-JD0Kx/",
+        // linkText: "View Promotion Instagram Post"
+      },
+      {
+        title: "Financial Workshop",
+        desc: "Promotional social media graphic created for the annual fundraiser.",
+        images: ["images/akpsi-fin.png"],
+        // link: "https://www.instagram.com/dusktodon_209/p/DV1_J-JD0Kx/",
+        // linkText: "View Promotion Instagram Post"
+      },
+      {
+        title: "Hot Cocoa Fundraiser",
+        desc: "Promotional social media graphic created for the annual fundraiser.",
+        images: ["images/akpsi-fundraiser.png"],
+        // link: "https://www.instagram.com/dusktodon_209/p/DV1_J-JD0Kx/",
+        // linkText: "View Promotion Instagram Post"
+      },
+      {
+        title: "Shark Tank Professional Workshop",
+        desc: "Promotional social media graphic created for the annual fundraiser.",
+        images: ["images/akpsi-sharktank.png"],
+        // link: "https://www.instagram.com/dusktodon_209/p/DV1_J-JD0Kx/",
+        // linkText: "View Promotion Instagram Post"
       },
     ]
   },
@@ -182,17 +212,18 @@ export const PROJECTS: Project[] = [
 
     date: "April 2026",
     location: "Remote",
-    images: [""],
+    images: ["images/somus-logo.jpg", "images/somus-wireframe.jpg"],
     desc: "FigBuild designathon project. Speculative wearable that tracks interoceptive load (HRV, muscle tension, respiratory rate, body temp) and triggers a grounding sequence before anxiety escalates. Designed full UI/UX in Figma.",
     bullets: [
       "Designed a wearable concept that tracks interoceptive load and triggers grounding support.",
       "Created UI/UX flows and screens in Figma for anxiety prevention and user reflection.",
       "Developed a speculative product narrative for prototypes shown in a designathon setting.",
+      "Prototype: figma.com/file/9WnPR3vcwFeRK9k6oJnVLq/Somus-Prototype"
     ],
     skills: ["Figma", "UI/UX", "Designathon"],
     role: "Designathon",
 
-    link: "#",
+    link: "https://www.figma.com/deck/EEPIQUHkV4YspuT9fIWnRG/Somus-2026?node-id=46-107",
   },
   {
     id: "umamii",
@@ -202,7 +233,7 @@ export const PROJECTS: Project[] = [
 
     date: "April 2025",
     location: "Remote",
-    images: [""],
+    images: ["images/umamii-logo.jpg", "images/umamii-branddeck.jpg"],
     desc: "Submission to Boston University's Catalyst 2025 UI/UX Designathon (Travel track). Swipe-based restaurant matching app designed to eliminate decision fatigue and excessive scrolling from travel and restaurant guide apps.",
     bullets: [
       "Designed a swipe-based restaurant matching experience to reduce decision fatigue.",
@@ -212,7 +243,7 @@ export const PROJECTS: Project[] = [
     skills: ["Figma", "Adobe CC", "UI/UX"],
     role: "Designathon",
 
-    link: "#",
+    link: "https://devpost.com/software/umamii",
 
   },
   {
@@ -223,7 +254,7 @@ export const PROJECTS: Project[] = [
 
     date: "December 2024",
     location: "Merced, CA",
-    images: [""],
+    images: ["images/swe-eyh-bw.jpg", "images/swe-eyh-mono.jpg", "images/swe-eyh-p.jpg"],
     desc: "Won first place in UC Merced Society of Women Engineers' logo design contest for the yearly 'Expanding Your Horizons' event. Design was featured as the official event logo and T-shirt. Proposed monochromatic, grayscale, color, and purple variants.",
     bullets: [
       "Designed an award-winning logo for the Expanding Your Horizons event.",
@@ -233,7 +264,7 @@ export const PROJECTS: Project[] = [
     skills: ["Adobe CC", "Graphic Design", "Contest Winner", "Branding"],
     role: "Contest",
 
-    link: "#",
+    link: "https://www.linkedin.com/in/jasmine-giching-lau/overlay/Project/1153609903/image-list/?profileId=ACoAADgQPtEB2M8CCmb5bFe8cRP5La5a7pNfl0c",
   },
   {
     id: "kairos",
@@ -308,7 +339,7 @@ export const PROJECTS: Project[] = [
     {
       title: "ASIP Fundraiser",
       desc: "Main poster design for the end-of-year dance showcase.",
-      images: ["imageskairos-asip-1.jpg", "imageskairos-asip-2.jpg"],
+      images: ["images/kairos-asip-1.jpg", "images/kairos-asip-2.jpg"],
       link: "https://www.instagram.com/ucmkairos/p/DARaZE1TYHV/",
       linkText: "View ASIP Fundraiser Post"
     },
@@ -510,6 +541,8 @@ export const EXPERIENCE: Experience[] = [
     ],
     role: "Internship",
     skills: ["Drupal", "Adobe CC", "Graphic Design", "HTML"],
+
+    link: "https://www.instagram.com/ucminnovate/"
   },
 ];
 

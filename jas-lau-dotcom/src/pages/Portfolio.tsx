@@ -25,7 +25,9 @@ function fromProject(project: Project): GalleryItem {
     title: project.title,
     org: project.org,
     date: project.date,
-    image: project.images?.[0],
+    image:
+      project.images?.[0] ??
+      project.deliverables?.find((d) => Array.isArray(d.images) && d.images.length > 0)?.images?.[0],
     images: project.images,
     tags: project.skills,
     role: project.role,
@@ -118,6 +120,7 @@ export default function Portfolio() {
           showCategory={false}
         />
       </div>
+      <p>Filter</p>
 
       <div className="portfolio-section">
         <div className="project-grid">

@@ -160,8 +160,15 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
             {'link' in project && project.link && (
               <div className="modal-info-block">
-                <a className="btn-outline" href={project.link} target="_blank" rel="noreferrer">
-                  {project.link}
+                <a
+                  className="btn-outline"
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  aria-label={`Open project link ${project.link}`}
+                >
+                  View project
                 </a>
               </div>
             )}
