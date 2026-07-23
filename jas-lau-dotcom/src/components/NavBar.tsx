@@ -1,6 +1,9 @@
 import { useState } from "react";
 import "../styles/nav.css";
 import { NAV_ITEMS, PageKey } from "../data/projects";
+import ProjectModal from "../components/ProjectModal";
+import { PROJECTS, Project } from "../data/projects";
+
 
 interface NavBarProps {
   activePage: PageKey;
@@ -29,7 +32,7 @@ export default function NavBar({ activePage, onNavigate }: NavBarProps) {
 
       {/* desktop links */}
       <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-        {NAV_ITEMS.map(({ key, label }) => (
+        {NAV_ITEMS.map(({ key, label }: { key: PageKey; label: string }) => (
           <li key={key}>
             <a
               href="#"

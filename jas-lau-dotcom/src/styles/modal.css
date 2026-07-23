@@ -4,8 +4,9 @@
   background: rgba(245, 245, 240, 0.92);
   z-index: 200;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  padding-top: 40px;
   animation: fadeIn 0.2s;
   cursor: pointer;
 }
@@ -19,12 +20,14 @@
   background: var(--bg);
   border: 1px solid var(--fg);
   padding: 40px;
-  max-width: 520px;
+  max-width: 1000px;
   width: 90%;
   cursor: default;
   animation: slideUp 0.25s cubic-bezier(0.23, 1, 0.32, 1);
   position: relative;
   z-index: 201;
+  max-height: calc(100vh - 96px);
+  overflow: auto;
 }
 
 @keyframes slideUp {
@@ -96,4 +99,31 @@
   color: var(--mid);
   line-height: 1.8;
   margin-bottom: 32px;
+}
+
+.modal-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.modal-gallery-tile {
+  display: block;
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: inherit;
+}
+
+.modal-gallery-tile img {
+  display: block;
+  width: 100%;
+  height: auto;   /* preserves original aspect ratio, no cropping */
+  max-width: 100%;
 }

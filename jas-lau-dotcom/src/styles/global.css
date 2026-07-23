@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap');
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -15,23 +15,30 @@
   --border:   #ccc;
   --hover-bg: #efefea;
   --card-bg:  #fafaf7;
-  --mono:     'Share Tech Mono', monospace;
-  --display:  'VT323', monospace;
+  --sans:     'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --serif:    'Cormorant Garamond', Georgia, serif;
+  --mono:     'JetBrains Mono', monospace;
   --nav-h:    52px;
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-h);
 }
 
 body {
+  padding-top: var(--nav-h);
   background: var(--bg);
   color: var(--fg);
-  font-family: var(--mono);
-  font-size: 13px;
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 14px;
   line-height: 1.6;
+  letter-spacing: 0.01em;
   overflow-x: hidden;
   cursor: crosshair;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* subtle paper texture via repeating dots */
@@ -61,17 +68,36 @@ a:hover {
 
 /* shared section labels */
 .section-label {
+  font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 6px;
+  font-weight: 500;
+  letter-spacing: 4px;
   color: var(--dim);
   margin-bottom: 12px;
   text-transform: uppercase;
 }
 
+.page-intro {
+  margin: 0 0 32px;
+  max-width: 720px;
+  color: var(--mid);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+.about-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 24px;
+}
+
 .section-title {
-  font-family: var(--display);
+  font-family: var(--serif);
+  font-weight: 600;
   font-size: clamp(28px, 5vw, 52px);
-  letter-spacing: 4px;
+  letter-spacing: -0.01em;
   color: var(--fg);
   margin-bottom: 32px;
 }
@@ -87,19 +113,23 @@ a:hover {
 }
 
 .page-label {
-  font-size: 9px;
-  letter-spacing: 6px;
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 4px;
   color: var(--dim);
   margin-bottom: 12px;
+  text-transform: uppercase;
 }
 
 .page-title {
-  font-family: var(--display);
+  font-family: var(--serif);
+  font-weight: 600;
   font-size: clamp(36px, 6vw, 72px);
-  letter-spacing: 4px;
+  letter-spacing: -0.01em;
   color: var(--fg);
   margin-bottom: 48px;
-  line-height: 1;
+  line-height: 1.05;
 }
 
 /* shared button */
@@ -107,9 +137,11 @@ a:hover {
   display: inline-block;
   border: 1px solid var(--fg);
   color: var(--fg);
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 4px;
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
   padding: 10px 24px;
   text-decoration: none;
   transition: all 0.15s;
@@ -126,9 +158,10 @@ a:hover {
 /* skill / tag pill */
 .skill-tag {
   border: 1px solid var(--border);
-  padding: 4px 12px;
-  font-size: 10px;
-  letter-spacing: 2px;
+  padding: 6px 14px;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 1px;
   color: var(--mid);
 }
 
@@ -138,15 +171,8 @@ a:hover {
   gap: 8px;
 }
 
-/* scroll progress bar */
-.scroll-bar {
-  position: fixed;
-  top: var(--nav-h);
-  left: 0;
-  height: 1px;
-  background: var(--fg);
-  z-index: 101;
-  transition: width 0.1s linear;
+code {
+  font-family: var(--mono);
 }
 
 /* footer */
@@ -155,9 +181,10 @@ a:hover {
   padding: 24px 40px;
   display: flex;
   justify-content: space-between;
-  font-size: 10px;
+  font-size: 11px;
   color: var(--dim);
-  letter-spacing: 3px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   position: relative;
   z-index: 1;
 }
