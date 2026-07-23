@@ -35,7 +35,7 @@ export interface Experience {
   desc: string;
   bullets: string[];
   skills: string[];
-  role: "Research" | "Internship" | "Full Time";
+  role: "Research" | "Internship" | "Full Time" | "Externship";
 
   link?: string;
 }
@@ -59,7 +59,7 @@ export const PROJECTS: Project[] = [
     title: "Dusk to Don",
     org: "Alpha Kappa Psi",
 
-    date: "Feb - April 2026",
+    date: "February - April 2026",
     location: "Merced, CA",
     images: ["",],
     desc: "Business Lead for a hybrid hospitality concept targeting college towns. Built a $280k–$350k startup budget, break-even model (~143 daily customers), and designed 24 sound-dampened private cubicles with 1 Gbps fiber. Developed brand identity and go-to-market strategy.",
@@ -160,7 +160,7 @@ export const PROJECTS: Project[] = [
     title: "Event Promotion",
     org: "Alpha Kappa Psi",
 
-    date: "Feb - April 2026",
+    date: "February - April 2026",
     location: "Merced, CA",
     images: ["",],
     desc: "Graphics to promote fundraisers, external events, financial literacy workshops, and professional development workshops",
@@ -273,7 +273,7 @@ export const PROJECTS: Project[] = [
     title: "Kairos Design",
     org: "Kairos Dance Group",
 
-    date: "Sep 2023 – March 2025",
+    date: "September 2023 – March 2025",
     location: "Merced, CA",
     images: [""],
     desc: "Graphic Design for Kairos UC Merced's Design Tech Crew. Produced event graphics, fundraiser materials, and promotional assets across 12+ pieces over two years.",
@@ -430,14 +430,32 @@ export const PROJECTS: Project[] = [
 
 export const EXPERIENCE: Experience[] = [
   {
+    id: "extern-vc",
+    category: "ENGINEERING",
+    title: "Capital Deal Sourcing & Startup Analysis Extern",
+    org: "Extern - Mangusta Capital",
+
+    date: "May 2026 - July 2026",
+    location: "Remote",
+    images: ["images/extern-logo.jpg"],
+    desc: "",
+    bullets: ["Built investment pipeline by sourcing Vertical AI and high-impact sector startups across online deal discovery platforms",
+      "Assessed startup viability by analyzing team background, fundraising history, press coverage, and market traction data",
+      "Benchmarked startups against market peers by researching competitive landscapes and sector positioning",
+      "Informed fund decision-making by synthesizing due diligence findings into investment memos and presentations with actionable recommendations",
+    ],
+    role: "Externship",
+    skills: ["Analysis", "Due Diligence", "Financial Modeling"],
+  },
+  {
     id: "oit-web-dev",
     category: "ENGINEERING",
     title: "Web Developer Student Assistant",
     org: "UC Merced — Office of Information Technology",
 
-    date: "Dec 2024 – April 2026",
+    date: "December 2024 – April 2026",
     location: "Merced, CA",
-    images: [""],
+    images: ["images/ucm-logo.jpg"],
 
     desc: "",
     bullets: [
@@ -455,9 +473,9 @@ export const EXPERIENCE: Experience[] = [
     title: "Research Assistant",
     org: "Parallel & Distributed Systems Laboratory",
     
-    date: "Feb 2025 – December 2025",
+    date: "February 2025 – December 2025",
     location: "Merced, CA",
-    images: [""],
+    images: ["images/padsys-logo.jpg"],
 
     desc: "",
     bullets: [
@@ -475,9 +493,9 @@ export const EXPERIENCE: Experience[] = [
     title: "Data & AI Intern",
     org: "StartNoo",
 
-    date: "Jun 2025 – Aug 2025",
+    date: "June 2025 – August 2025",
     location: "New York, NY · Remote",
-    images: [""],
+    images: ["images/startnoo-logo.jpg"],
     desc: "",
     bullets: [
       "Built an autonomous AI chatbot using LangChain handling 7+ support use cases, reducing response time for common queries",
@@ -494,9 +512,9 @@ export const EXPERIENCE: Experience[] = [
     title: "Research Assistant — EVOLabs",
     org: "University of California, Merced",
 
-    date: "Jan 2025 – May 2025",
+    date: "January 2025 – May 2025",
     location: "Merced, CA",
-    images: [""],
+    images: ["images/ucm-logo.jpg"],
     desc: "",
     bullets: [
       "Integrated LLMs into VR NPCs to enable natural language interaction for experimental psychology studies",
@@ -512,9 +530,9 @@ export const EXPERIENCE: Experience[] = [
     title: "Lab Intern",
     org: "Simbrain",
 
-    date: "Jun 2024 – Dec 2024",
+    date: "June 2024 – December 2024",
     location: "Merced, CA",
-    images: [""],
+    images: ["images/simbrain-logo.png"],
     desc: "",
     bullets: [
       "Identified bugs and authored detailed reports with proposed fixes to improve application stability",
@@ -530,9 +548,9 @@ export const EXPERIENCE: Experience[] = [
     title: "Blackstone Launchpad Student Intern",
     org: "UCM Innovation + Design Hub",
 
-    date: "Jan 2024 – Dec 2024",
+    date: "January 2024 – December 2024",
     location: "UC Merced · On-site",
-    images: ["images/idhub-christmas1.png", "images/idhub-christmas2.png"],
+    images: ["images/idhub-logo.jpg", "images/idhub-christmas1.png", "images/idhub-christmas2.png"],
     desc: "",
     bullets: [
       "Maintained the UC Merced Innovation website using Drupal and HTML",

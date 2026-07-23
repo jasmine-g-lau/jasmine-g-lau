@@ -19,6 +19,10 @@ interface GalleryItem {
   source: Project | Experience;
 }
 
+function firstImage(images?: string[]) {
+  return images?.find((src) => !!src);
+}
+
 function fromProject(project: Project): GalleryItem {
   return {
     id: `project-${project.id}`,
@@ -26,9 +30,9 @@ function fromProject(project: Project): GalleryItem {
     org: project.org,
     date: project.date,
     image:
-      project.images?.[0] ??
-      project.deliverables?.find((d) => Array.isArray(d.images) && d.images.length > 0)?.images?.[0],
-    images: project.images,
+      firstImage(project.images) ??
+      project.deliverables?.find((d) => Array.isArray(d.images) && firstImage(d.images))?.images?.[0],
+    images: project.images?.filter(Boolean),
     tags: project.skills,
     role: project.role,
     workType: project.role,
@@ -42,8 +46,8 @@ function fromExperience(experience: Experience): GalleryItem {
     title: experience.title,
     org: experience.org,
     date: experience.date,
-    image: experience.images?.[0],
-    images: experience.images,
+    image: firstImage(experience.images),
+    images: experience.images?.filter(Boolean),
     tags: experience.skills,
     role: experience.role,
     workType: experience.role,

@@ -38,7 +38,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   const normalizeSrc = (s?: string) => (s ? (s.startsWith("/") ? s : `/${s}`) : s);
   const photosNormalized = photos.map(normalizeSrc).filter(Boolean) as string[];
 
-  type GalleryItem = { src: string; title?: string; desc?: string; link?: string };
+  type GalleryItem = { src: string; title?: string; desc?: string; link?: string; linkText?: string };
 
   const deliverableGallery: GalleryItem[] = [];
   if (Array.isArray((project as Project).deliverables) && (project as Project).deliverables!.length) {
@@ -46,7 +46,15 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
       if (Array.isArray(d.images)) {
         d.images.forEach((s) => {
           const src = normalizeSrc(s);
-          if (src) deliverableGallery.push({ src, title: d.title, desc: d.desc, link: d.link });
+          if (src) {
+            deliverableGallery.push({
+              src,
+              title: d.title,
+              desc: d.desc,
+              link: d.link,
+              linkText: d.linkText,
+            });
+          }
         });
       }
     });
@@ -77,8 +85,10 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         <div className="modal-title">{project.title}</div>
 
         <div className="modal-body-grid">
-          {gallerySource.length > 0 && (
+          {/* {gallerySource.length > 0 && ( */}
+          {gallerySource.length > 0 ? (
             <div className={`modal-gallery${isSinglePhoto ? " modal-gallery--single" : ""}`}>
+
               {gallerySource.map((g, i) => {
                 const tileInner = (
                   <>
@@ -100,6 +110,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                       href={g.link}
                       target="_blank"
                       rel="noreferrer"
+                      data-linktext={g.linkText || "Open link"}
                       onClick={(e) => e.stopPropagation()}
                     >
                       {tileInner}
@@ -114,7 +125,15 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 );
               })}
             </div>
-          )}
+          // )}
+            
+          ) : project.images?.[0] ? (
+            <div className="modal-gallery modal-gallery--single">
+              <div className="modal-gallery-tile">
+                <img src={project.images[0]} alt={project.title} />
+              </div>
+            </div>
+          ) : null}
 
           <div className="modal-info">
             {dateLabel && <div className="modal-date">{dateLabel}</div>}

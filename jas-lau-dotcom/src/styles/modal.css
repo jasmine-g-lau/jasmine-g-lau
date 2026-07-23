@@ -4,9 +4,9 @@
   background: rgba(245, 245, 240, 0.92);
   z-index: 200;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  padding-top: 40px;
+  padding: 20px 0;
   animation: fadeIn 0.2s;
   cursor: pointer;
 }
@@ -20,14 +20,28 @@
   background: var(--bg);
   border: 1px solid var(--fg);
   padding: 40px;
-  max-width: 1000px;
-  width: 90%;
+  max-width: 1200px;
+  width: min(95%, 1200px);
   cursor: default;
   animation: slideUp 0.25s cubic-bezier(0.23, 1, 0.32, 1);
   position: relative;
   z-index: 201;
-  max-height: calc(100vh - 96px);
+  max-height: calc(100vh - 200px);
   overflow: auto;
+}
+
+.modal-gallery-tile[href]::after {
+  content: attr(data-linktext);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0 12px;
+  opacity: 0;
 }
 
 @keyframes slideUp {
@@ -103,8 +117,8 @@
 
 .modal-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 8px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
   width: 100%;
   min-width: 0;
   box-sizing: border-box;
@@ -116,7 +130,7 @@
   width: 100%;
   min-width: 0;
   overflow: hidden;
-  border: 1px solid var(--border);
+  /* border: 1px solid var(--border); */
   text-decoration: none;
   color: inherit;
 }
@@ -126,6 +140,43 @@
   width: 100%;
   height: auto;   /* preserves original aspect ratio, no cropping */
   max-width: 100%;
+}
+
+.modal-gallery-tile[href] {
+  cursor: pointer;
+}
+
+.modal-gallery-tile[href]::before,
+.modal-gallery-tile[href]::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  transition: opacity 0.2s ease, background 0.2s ease;
+}
+
+.modal-gallery-tile[href]::before {
+  background: rgba(0, 0, 0, 0);
+}
+
+.modal-gallery-tile[href]::after {
+  content: attr(data-linktext);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0;
+}
+
+.modal-gallery-tile[href]:hover::before {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-gallery-tile[href]:hover::after {
+  opacity: 1;
 }
 
 /* Additional modal-specific rules moved from home.css */
