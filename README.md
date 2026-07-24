@@ -10,5 +10,5 @@ Computer Science and Engineering, Bachelors of Science @ UC Merced
 | Name | Description |
 | :--- | :--- |
 |  &nbsp;&nbsp; [DiscoBoxd](https://github.com/jasmine-g-lau/discoboxd) | Music Tracking (LetterBoxd Inspired) |
-|  &nbsp;&nbsp; [DiscoBoxd](https://github.com/rcamacho11/SpotiTrac) | Journal Using Your Spotify Profile |
+|  &nbsp;&nbsp; [SpotiTrac](https://github.com/rcamacho11/SpotiTrac) | Journal Using Your Spotify Profile |
 |  &nbsp;&nbsp; [Ultralytics](https://github.com/jasmine-g-lau/ultralytics) |  |
