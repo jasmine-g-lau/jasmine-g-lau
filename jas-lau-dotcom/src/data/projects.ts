@@ -395,7 +395,7 @@ export const PROJECTS: Project[] = [
     title: "ML with Python",
     
     date: "2024",
-    images: [""],
+    images: ["images/ml-python.png"],
     desc: "Honors project for Machine Learning with Python certification. Developed a Python program to clean and apply classification algorithms to Australian Government rainfall datasets. Preprocessed data for optimal model accuracy.",
     bullets: [
       "Built data-cleaning pipelines for Australian Government rainfall datasets.",
@@ -413,7 +413,7 @@ export const PROJECTS: Project[] = [
     title: "MIPS Algorithm",
 
     date: "2024",
-    images: [""],
+    images: ["images/mips.png"],
     desc: "UC Merced Computer Organization course project. Implemented selection sort and recursive summation in MIPS assembly language, translating directly from C code.",
     bullets: [
       "Implemented selection sort and recursive summation using MIPS assembly.",

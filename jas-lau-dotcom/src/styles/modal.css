@@ -36,7 +36,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #fff;
+  /* color: #fff; */
   font-size: 12px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -116,30 +116,32 @@
 }
 
 .modal-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 16px;
   width: 100%;
-  min-width: 0;
+  justify-content: center;
+  align-items: flex-start;
   box-sizing: border-box;
 }
 
 .modal-gallery-tile {
-  display: block;
-  position: relative;
-  width: 100%;
-  min-width: 0;
+  display: inline-flex;
+  flex-direction: column;
+  flex: 0 1 auto;
+  width: auto;
+  max-width: min(520px, 100%);
   overflow: hidden;
-  /* border: 1px solid var(--border); */
   text-decoration: none;
   color: inherit;
 }
 
 .modal-gallery-tile img {
   display: block;
-  width: 100%;
-  height: auto;   /* preserves original aspect ratio, no cropping */
+  width: auto;
+  height: auto;
   max-width: 100%;
+  max-height: 420px;
 }
 
 .modal-gallery-tile[href] {

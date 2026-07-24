@@ -114,6 +114,9 @@ export default function Portfolio() {
     });
   }, [galleryItems, filters]);
 
+  const filteredExperience = filteredItems.filter((item) => item.id.startsWith("experience-"));
+  const filteredProjects = filteredItems.filter((item) => item.id.startsWith("project-"));
+
   return (
     <div className="page">
       <div className="project-toolbar">
@@ -128,11 +131,34 @@ export default function Portfolio() {
           showCategory={false}
         />
       </div>
-      <p>Filter</p>
 
-      <div className="portfolio-section">
+      <section className="timeline-section">
+        <h2 className="section-label">Experience</h2>
+        <div className="timeline">
+          {filteredExperience.map((item) => (
+            <button
+              key={item.id}
+              type="button"
+              className="timeline-item"
+              onClick={() => setSelectedItem(item.source)}
+            >
+              <div className="timeline-logo">
+                {item.image && <img src={item.image} alt={item.title} />}
+              </div>
+              <div className="timeline-main">
+                <div className="timeline-title">{item.title}</div>
+                {item.org && <div className="timeline-org">{item.org}</div>}
+              </div>
+              <div className="timeline-date">{item.date}</div>
+            </button>
+          ))}
+        </div>
+      </section>
+
+      <section className="project-section">
+        <h2 className="section-label">Projects</h2>
         <div className="project-grid">
-          {filteredItems.map((item) => (
+          {filteredProjects.map((item) => (
             <button
               key={item.id}
               type="button"
@@ -144,11 +170,11 @@ export default function Portfolio() {
                   <img src={item.image} className="project-card-image" alt={item.title} />
                 </div>
               )}
+              <div className="project-card-title">{item.title}</div>
               <div className="project-card-meta">
                 {item.org && <span>{item.org}</span>}
                 <span>{item.date}</span>
               </div>
-              <div className="project-card-title">{item.title}</div>
               <div className="project-card-tags">
                 {item.tags.map((tag) => (
                   <span key={tag} className="project-card-tag">
@@ -163,7 +189,7 @@ export default function Portfolio() {
         {filteredItems.length === 0 && (
           <p className="empty-state">No items match these filters.</p>
         )}
-      </div>
+      </section>
 
       {selectedItem && (
         <ProjectModal project={selectedItem} onClose={() => setSelectedItem(null)} />

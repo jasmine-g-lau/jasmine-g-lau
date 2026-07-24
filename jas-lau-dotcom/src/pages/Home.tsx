@@ -50,9 +50,10 @@ export default function Home() {
           <p>Computer Science & Engineering BS, Cognitive Science Minor @ UC Merced</p>
         </section>
         <section className="hero-image">
+
         </section>
       </section>
-
+      
       <section className="carousel-section">
         <h2 className="section-title">PORTFOLIO</h2>
 
